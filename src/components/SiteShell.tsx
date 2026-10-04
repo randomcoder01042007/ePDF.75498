@@ -32,7 +32,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm text-foreground">
               Made by Malviyan
               <Heart className="h-4 w-4 fill-primary text-primary" aria-hidden="true" />
-              <span className="sr-only">with love</span>
               <span className="text-muted-foreground">with love</span>
             </span>
             <span className="font-mono text-[11px] text-muted-foreground">
