@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- PDF processing runs entirely in the browser (pdf-lib, pdfjs-dist, docx) via src/lib/pdf.ts, dynamically imported; the runtime cannot host Python/LibreOffice. Tools needing those are flagged available:false in src/lib/tools.ts.
