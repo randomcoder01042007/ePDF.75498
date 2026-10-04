@@ -9,7 +9,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <nav className="glass sticky top-0 z-20 border-x-0 border-t-0">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
-            <span className="grid size-7 place-items-center rounded-lg bg-primary font-mono text-[10px] font-medium text-primary-foreground">PDF</span>
             ePDF
           </Link>
           <div className="flex items-center gap-5 text-sm text-muted-foreground">
