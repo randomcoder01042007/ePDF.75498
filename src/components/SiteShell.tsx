@@ -1,43 +1,63 @@
 import { Link } from "@tanstack/react-router";
-import { Heart } from "lucide-react";
-import type { ReactNode } from "react";
+import { Heart, Menu, Upload, X } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import logoAsset from "@/assets/pdfyi-logo.png.asset.json";
 
+const NAV = [
+  { label: "Tools", to: "/tools" as const },
+  { label: "Features", to: "/" as const, hash: "features" },
+  { label: "About", to: "/" as const, hash: "about" },
+];
+
 export function SiteShell({ children }: { children: ReactNode }) {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      <div className="pointer-events-none fixed -right-40 -top-40 h-[600px] w-[600px] rounded-full glow-a opacity-40 blur-[100px]" />
-      <div className="pointer-events-none fixed -bottom-52 -left-40 h-[560px] w-[560px] rounded-full glow-b opacity-40 blur-[110px]" />
-      <nav className="glass sticky top-0 z-20 border-x-0 border-t-0">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-          <Link to="/" className="flex items-center" aria-label="PDFyi home">
-            <img src={logoAsset.url} alt="PDFyi" className="h-10 w-auto rounded-md" />
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <nav className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
+          <Link to="/" className="flex shrink-0 items-center" aria-label="PDFyi home">
+            <img src={logoAsset.url} alt="PDFyi" className="h-9 w-auto md:h-10" />
           </Link>
-          <div className="flex items-center text-sm text-muted-foreground">
-            <Link to="/tools" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Start Creating</Link>
+          <div className="hidden items-center gap-1 md:flex">
+            {NAV.map((n) => (
+              <Link key={n.label} to={n.to} hash={n.hash} className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-surface hover:text-foreground">{n.label}</Link>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <Link to="/" hash="upload" className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+              <Upload className="size-4" /> <span>Upload PDF</span>
+            </Link>
+            <button onClick={() => setOpen(!open)} aria-label="Menu" className="grid size-10 place-items-center rounded-xl border border-border md:hidden">
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
           </div>
         </div>
-      </nav>
-      <div className="relative z-10">{children}</div>
-      <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 pt-12">
-        <div className="flex flex-col gap-8 border-t border-border pt-10 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-md">
-            <img src={logoAsset.url} alt="PDFyi" className="h-9 w-auto rounded-md" />
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A free, all-in-one PDF toolkit built for students. Compress, convert, merge, split, rotate and
-              tidy up your notes, assignments and scanned pages right in your browser - no sign-up, no
-              uploads, no watermark.
-            </p>
+        {open && (
+          <div className="border-t border-border bg-background px-5 py-3 md:hidden">
+            {NAV.map((n) => (
+              <Link key={n.label} to={n.to} hash={n.hash} onClick={() => setOpen(false)} className="block rounded-lg px-3 py-3 font-medium hover:bg-surface">{n.label}</Link>
+            ))}
           </div>
-          <div className="flex flex-col items-start gap-4 md:items-end">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm text-foreground">
-              Made by Malviyan
-              <Heart className="h-4 w-4 fill-primary text-primary" aria-hidden="true" />
-              <span className="text-muted-foreground">{"\n"}</span>
+        )}
+      </nav>
+      <div>{children}</div>
+      <footer className="border-t border-border bg-surface/60">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <img src={logoAsset.url} alt="PDFyi" className="h-9 w-auto" />
+            <p className="mt-3 max-w-sm text-sm text-muted-foreground">Your simple PDF workspace for students.</p>
+            <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm">
+              Made by Malviyan <Heart className="size-4 fill-pdf text-pdf" aria-hidden="true" /> with love
             </span>
-            <span className="font-mono text-[11px] text-muted-foreground">
-              Files never leave your device · Made for students
-            </span>
+          </div>
+          <div className="flex flex-col gap-4 md:items-end">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+              {NAV.map((n) => <Link key={n.label} to={n.to} hash={n.hash} className="text-muted-foreground hover:text-foreground">{n.label}</Link>)}
+              <Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacy</Link>
+              <Link to="/terms" className="text-muted-foreground hover:text-foreground">Terms</Link>
+            </div>
+            <p className="text-sm text-muted-foreground">Built by a Malviyan, for students.</p>
+            <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} PDFyi</p>
           </div>
         </div>
       </footer>
