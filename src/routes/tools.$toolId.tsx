@@ -50,8 +50,8 @@ function ToolPage() {
 function Unavailable() {
   return (
     <div className="glass rounded-[26px] p-10 text-center">
-      <p className="font-display text-xl font-bold">This tool isn't available yet</p>
-      <p className="mt-2 text-sm text-muted-foreground">We'd rather tell you than fake it. Try another tool in the meantime.</p>
+      <p className="font-display text-xl font-bold">Coming soon</p>
+      <p className="mt-2 text-sm text-muted-foreground">This tool isn't ready yet — we'd rather tell you than fake it. Try another tool in the meantime.</p>
       <Link to="/tools" className="mt-6 inline-block rounded-full bg-primary px-5 py-2.5 font-semibold text-primary-foreground">Browse tools</Link>
     </div>
   );

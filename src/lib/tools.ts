@@ -58,3 +58,19 @@ export function parseRanges(input: string, total: number): number[] {
 let pending: File[] = [];
 export const setPending = (f: File[]) => { pending = f; };
 export const takePending = () => { const f = pending; pending = []; return f; };
+
+/** Tools shown in the UI but not built yet — always rendered as "Coming Soon", never linked. */
+export const COMING_SOON = {
+  Edit: [
+    { name: "Edit PDF", short: "Change text and layout on a page." },
+    { name: "Add Text", short: "Type notes onto any page." },
+    { name: "Add Images", short: "Place pictures or stamps on pages." },
+    { name: "Sign PDF", short: "Draw or type your signature." },
+  ],
+  AI: [
+    { name: "Summarize PDF", short: "Get the gist of long readings." },
+    { name: "Ask PDF", short: "Ask questions, get answers from the file." },
+    { name: "Extract Key Points", short: "Pull out the important bits." },
+    { name: "Generate Study Notes", short: "Turn chapters into revision notes." },
+  ],
+} as const;
