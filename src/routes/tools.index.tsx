@@ -18,7 +18,7 @@ function ToolsPage() {
   return (
     <SiteShell>
       <main className="mx-auto max-w-6xl px-5 pb-24 pt-14">
-        <span className="font-mono text-[11px] uppercase tracking-[.2em] text-primary">/tools</span>
+        <span className="font-mono text-[11px] uppercase tracking-[.2em] text-primary"></span>
         <h1 className="mt-2 font-display text-4xl font-extrabold tracking-tight md:text-5xl">Every tool, by category</h1>
         <div className="mt-10 space-y-10">
           {CATEGORIES.map((c) => (
