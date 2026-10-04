@@ -90,7 +90,7 @@ export async function pdfToImages(file: File): Promise<Out[]> {
 }
 
 export async function compress(file: File, level: "low" | "medium" | "high"): Promise<Out[]> {
-  const cfg = { low: [1.6, 0.8], medium: [1.25, 0.6], high: [1, 0.4] }[level];
+  const cfg = ({ low: [1.6, 0.8], medium: [1.25, 0.6], high: [1, 0.4] } as const)[level];
   const doc = await openJs(file);
   const out = await PDFDocument.create();
   for (let i = 1; i <= doc.numPages; i++) {
@@ -111,7 +111,7 @@ export async function pdfToWord(file: File): Promise<Out[]> {
     let lastY: number | null = null;
     const lines: string[] = [];
     for (const it of content.items as { str: string; transform: number[]; hasEOL?: boolean }[]) {
-      const y = it.transform[5];
+      const y = it.transform[5] ?? 0;
       if (lastY !== null && Math.abs(y - lastY) > 2) { lines.push(line); line = ""; }
       line += it.str;
       lastY = y;
