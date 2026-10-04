@@ -12,9 +12,9 @@ export const Route = createFileRoute("/tools/$toolId")({
     return { tool };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Tool not found — StudyPDF" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "Tool not found — PDFyi" }, { name: "robots", content: "noindex" }] };
     const t = loaderData.tool;
-    const title = `${t.name} — StudyPDF`;
+    const title = `${t.name} — PDFyi`;
     return {
       meta: [
         { title },
