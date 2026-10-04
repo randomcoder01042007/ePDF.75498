@@ -106,7 +106,7 @@ function Workspace({ tool }: { tool: Tool }) {
     setBusy(true); setError(""); setResults([]);
     try {
       const pdf = await import("@/lib/pdf");
-      const f = files[0];
+      const f = files[0]!;
       const sel = [...selected].sort((a, b) => a - b);
       const fromRanges = () => (ranges.trim() ? parseRanges(ranges, thumbs.length) : sel);
       let out: Out[] = [];
@@ -132,7 +132,7 @@ function Workspace({ tool }: { tool: Tool }) {
   const move = (pos: number, d: number) => {
     const n = [...order]; const t = pos + d;
     if (t < 0 || t >= n.length) return;
-    [n[pos], n[t]] = [n[t], n[pos]]; setOrder(n);
+    const a = n[pos]!; n[pos] = n[t]!; n[t] = a; setOrder(n);
   };
   const toggle = (i: number) => { const s = new Set(selected); s.has(i) ? s.delete(i) : s.add(i); setSelected(s); };
   const kb = (b: number) => (b / 1024 > 1024 ? `${(b / 1048576).toFixed(2)} MB` : `${Math.round(b / 1024)} KB`);
@@ -159,7 +159,7 @@ function Workspace({ tool }: { tool: Tool }) {
                 <span className="font-mono text-xs text-primary">{i + 1}</span>
                 <span className="flex-1 truncate">{f.name}</span>
                 <span className="font-mono text-[11px] text-muted-foreground">{kb(f.size)}</span>
-                <button aria-label="Move up" onClick={() => i > 0 && setFiles(files.map((x, j) => (j === i - 1 ? files[i] : j === i ? files[i - 1] : x)))} className="px-1 text-muted-foreground hover:text-foreground">↑</button>
+                <button aria-label="Move up" onClick={() => i > 0 && setFiles(files.map((x, j) => (j === i - 1 ? files[i]! : j === i ? files[i - 1]! : x)))} className="px-1 text-muted-foreground hover:text-foreground">↑</button>
                 <button aria-label="Remove" onClick={() => setFiles(files.filter((_, j) => j !== i))} className="px-1 text-muted-foreground hover:text-destructive">✕</button>
               </li>
             ))}
@@ -168,7 +168,7 @@ function Workspace({ tool }: { tool: Tool }) {
         )}
 
         {!tool.multiple && !PAGE_TOOLS.includes(tool.id) && (
-          <p className="rounded-xl border border-border bg-secondary px-4 py-3 text-sm">{files[0].name}</p>
+          <p className="rounded-xl border border-border bg-secondary px-4 py-3 text-sm">{files[0]!.name}</p>
         )}
 
         {busy && !thumbs.length && PAGE_TOOLS.includes(tool.id) && <p className="text-sm text-muted-foreground">Rendering pages…</p>}
