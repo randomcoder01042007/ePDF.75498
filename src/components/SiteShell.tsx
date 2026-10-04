@@ -11,8 +11,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
             ePDF
           </Link>
-          <div className="flex items-center gap-5 text-sm text-muted-foreground">
-            <Link to="/tools" className="transition-colors hover:text-foreground" activeProps={{ className: "text-foreground" }}>Tools</Link>
+          <div className="flex items-center text-sm text-muted-foreground">
             <Link to="/tools" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Start Creating</Link>
           </div>
         </div>
