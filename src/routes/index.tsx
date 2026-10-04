@@ -34,7 +34,7 @@ function Home() {
             Everything you need to <span className="draw text-primary">work with PDFs.</span>
           </h1>
           <p className="rise mt-6 max-w-[52ch] text-pretty text-lg text-muted-foreground">
-            Compress, convert, merge, split and manage your study documents — quickly and easily.
+            Compress, convert, merge, split and manage your study documents quickly and easily.
           </p>
           <div className="rise mt-8 flex flex-wrap items-center gap-3">
             <a href="#upload" className="rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Start Using PDF Tools</a>
@@ -57,7 +57,7 @@ function Home() {
               {["PDF", "JPG", "PNG"].map((t) => (
                 <span key={t} className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono text-[10px] text-muted-foreground">{t}</span>
               ))}
-              <span className="ml-auto text-xs text-muted-foreground">Processed on your device — nothing is uploaded.</span>
+              <span className="ml-auto text-xs text-muted-foreground">Processed on your device , nothing is uploaded.</span>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ function Home() {
 
           <div className="glass flex flex-col justify-between gap-6 rounded-[26px] p-7 md:flex-row md:items-center lg:col-span-3">
             <div>
-              <span className="font-mono text-[11px] uppercase tracking-[.2em] text-primary">/tools</span>
+              <span className="font-mono text-[11px] uppercase tracking-[.2em] text-primary">TOOLS</span>
               <h2 className="mt-2 font-display text-2xl font-bold">Browse every tool by category</h2>
               <p className="mt-1 max-w-[46ch] text-sm text-muted-foreground">Find the right one fast — grouped so you always know where a task lives.</p>
             </div>

@@ -10,17 +10,17 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link to="/" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
             <span className="grid size-7 place-items-center rounded-lg bg-primary font-mono text-[10px] font-medium text-primary-foreground">PDF</span>
-            StudyPDF
+            ePDF
           </Link>
           <div className="flex items-center gap-5 text-sm text-muted-foreground">
             <Link to="/tools" className="transition-colors hover:text-foreground" activeProps={{ className: "text-foreground" }}>Tools</Link>
-            <Link to="/tools" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Get started</Link>
+            <Link to="/tools" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Start Creating</Link>
           </div>
         </div>
       </nav>
       <div className="relative z-10">{children}</div>
       <footer className="relative z-10 mx-auto flex max-w-6xl items-center justify-between border-t border-border px-5 py-10 text-sm text-muted-foreground">
-        <span className="font-display font-bold text-foreground">StudyPDF</span>
+        <span className="font-display font-bold text-foreground">ePDf</span>
         <span className="font-mono text-[11px]">Files never leave your device · Made for students</span>
       </footer>
     </div>
