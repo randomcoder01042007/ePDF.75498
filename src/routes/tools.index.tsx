@@ -5,10 +5,10 @@ import { CATEGORIES, TOOLS } from "@/lib/tools";
 export const Route = createFileRoute("/tools/")({
   head: () => ({
     meta: [
-      { title: "All PDF Tools — StudyPDF" },
-      { name: "description", content: "Convert, organize, optimize and inspect PDFs. Every StudyPDF tool, grouped by category." },
-      { property: "og:title", content: "All PDF Tools — StudyPDF" },
-      { property: "og:description", content: "Every StudyPDF tool, grouped by category." },
+      { title: "All PDF Tools — PDFyi" },
+      { name: "description", content: "Convert, organize, optimize and inspect PDFs. Every PDFyi tool, grouped by category." },
+      { property: "og:title", content: "All PDF Tools — PDFyi" },
+      { property: "og:description", content: "Every PDFyi tool, grouped by category." },
     ],
   }),
   component: ToolsPage,

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Heart } from "lucide-react";
 import type { ReactNode } from "react";
+import logoAsset from "@/assets/pdfyi-logo.png.asset.json";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -9,8 +10,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <div className="pointer-events-none fixed -bottom-52 -left-40 h-[560px] w-[560px] rounded-full glow-b opacity-40 blur-[110px]" />
       <nav className="glass sticky top-0 z-20 border-x-0 border-t-0">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-          <Link to="/" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
-            ePDF
+          <Link to="/" className="flex items-center" aria-label="PDFyi home">
+            <img src={logoAsset.url} alt="PDFyi" className="h-10 w-auto rounded-md" />
           </Link>
           <div className="flex items-center text-sm text-muted-foreground">
             <Link to="/tools" className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/85">Start Creating</Link>
@@ -21,7 +22,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 pt-12">
         <div className="flex flex-col gap-8 border-t border-border pt-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
-            <span className="font-display text-lg font-extrabold tracking-tight text-foreground">ePDF</span>
+            <img src={logoAsset.url} alt="PDFyi" className="h-9 w-auto rounded-md" />
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               A free, all-in-one PDF toolkit built for students. Compress, convert, merge, split, rotate and
               tidy up your notes, assignments and scanned pages right in your browser - no sign-up, no

@@ -38,26 +38,26 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.14 0.025 270);
-  --foreground: oklch(0.94 0.02 275);
-  --card: oklch(0.18 0.03 270);
-  --card-foreground: oklch(0.94 0.02 275);
-  --popover: oklch(0.18 0.03 270);
-  --popover-foreground: oklch(0.94 0.02 275);
-  --primary: oklch(0.82 0.14 178);
-  --primary-foreground: oklch(0.14 0.025 270);
-  --secondary: oklch(1 0 0 / 5%);
-  --secondary-foreground: oklch(0.94 0.02 275);
-  --muted: oklch(1 0 0 / 5%);
-  --muted-foreground: oklch(0.67 0.05 275);
-  --accent: oklch(0.82 0.14 178);
-  --accent-foreground: oklch(0.14 0.025 270);
-  --violet: oklch(0.64 0.18 275);
-  --destructive: oklch(0.65 0.2 22);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.31 0.045 272);
-  --input: oklch(0.31 0.045 272);
-  --ring: oklch(0.82 0.14 178);
+  --background: oklch(0.98 0.008 250);
+  --foreground: oklch(0.22 0.04 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 270);
+  --primary: oklch(0.62 0.13 178);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.22 0.04 270 / 5%);
+  --secondary-foreground: oklch(0.22 0.04 270);
+  --muted: oklch(0.22 0.04 270 / 5%);
+  --muted-foreground: oklch(0.48 0.04 275);
+  --accent: oklch(0.62 0.13 178);
+  --accent-foreground: oklch(0.99 0 0);
+  --violet: oklch(0.58 0.16 275);
+  --destructive: oklch(0.58 0.2 22);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.015 265);
+  --input: oklch(0.9 0.015 265);
+  --ring: oklch(0.62 0.13 178);
 }
 
 @layer base {
@@ -70,12 +70,13 @@
 }
 
 @utility glass {
-  background: linear-gradient(160deg, oklch(1 0 0 / 7%), oklch(1 0 0 / 2%));
+  background: linear-gradient(160deg, oklch(1 0 0 / 85%), oklch(1 0 0 / 65%));
   backdrop-filter: blur(16px);
-  border: 1px solid oklch(1 0 0 / 10%);
+  border: 1px solid oklch(0.22 0.04 270 / 8%);
+  box-shadow: 0 1px 2px oklch(0.22 0.04 270 / 4%);
 }
-@utility glow-a { background: radial-gradient(circle, oklch(0.82 0.14 178 / 55%), transparent 70%); }
-@utility glow-b { background: radial-gradient(circle, oklch(0.64 0.18 275 / 50%), transparent 70%); }
+@utility glow-a { background: radial-gradient(circle, oklch(0.82 0.14 178 / 35%), transparent 70%); }
+@utility glow-b { background: radial-gradient(circle, oklch(0.7 0.16 275 / 28%), transparent 70%); }
 
 @keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
 @keyframes draw { from { clip-path: inset(0 100% 0 0) } to { clip-path: inset(0 0 0 0) } }

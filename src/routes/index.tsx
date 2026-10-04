@@ -6,9 +6,9 @@ import { CATEGORIES, MAX_MB, POPULAR, getTool, setPending } from "@/lib/tools";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "StudyPDF — Everything you need to work with PDFs" },
+      { title: "PDFyi — Everything you need to work with PDFs" },
       { name: "description", content: "Compress, convert, merge, split and manage your study documents — quickly and easily, right in your browser." },
-      { property: "og:title", content: "StudyPDF — PDF toolkit for students" },
+      { property: "og:title", content: "PDFyi — PDF toolkit for students" },
       { property: "og:description", content: "Compress, convert, merge, split and manage your study documents — quickly and easily." },
     ],
   }),
@@ -28,7 +28,7 @@ function Home() {
       <header className="mx-auto max-w-6xl px-5 pb-10 pt-16">
         <div className="max-w-3xl">
           <span className="rise mb-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[.2em] text-primary">
-            <span className="size-1.5 rounded-full bg-primary" />StudyPDF · PDF toolkit for students
+            <span className="size-1.5 rounded-full bg-primary" />PDFyi · PDF toolkit for students
           </span>
           <h1 className="text-balance font-display text-5xl font-extrabold leading-[1.02] tracking-tight md:text-7xl">
             Everything you need to <span className="draw text-primary">work with PDFs.</span>
