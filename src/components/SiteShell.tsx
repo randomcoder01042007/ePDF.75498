@@ -17,9 +17,28 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </div>
       </nav>
       <div className="relative z-10">{children}</div>
-      <footer className="relative z-10 mx-auto flex max-w-6xl items-center justify-between border-t border-border px-5 py-10 text-sm text-muted-foreground">
-        <span className="font-display font-bold text-foreground">ePDf</span>
-        <span className="font-mono text-[11px]">Files never leave your device · Made for students</span>
+      <footer className="relative z-10 mx-auto max-w-6xl px-5 pb-10 pt-12">
+        <div className="flex flex-col gap-8 border-t border-border pt-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-md">
+            <span className="font-display text-lg font-extrabold tracking-tight text-foreground">ePDF</span>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              A free, all-in-one PDF toolkit built for students. Compress, convert, merge, split, rotate and
+              tidy up your notes, assignments and scanned pages right in your browser — no sign-up, no
+              uploads, no watermark.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-4 md:items-end">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm text-foreground">
+              Made by Malviyan
+              <Heart className="h-4 w-4 fill-primary text-primary" aria-hidden="true" />
+              <span className="sr-only">with love</span>
+              <span className="text-muted-foreground">with love</span>
+            </span>
+            <span className="font-mono text-[11px] text-muted-foreground">
+              Files never leave your device · Made for students
+            </span>
+          </div>
+        </div>
       </footer>
     </div>
   );
