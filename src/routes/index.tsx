@@ -99,7 +99,7 @@ function Home() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-12 pt-14 md:pt-20 lg:grid-cols-[1.05fr_1fr]">
         <div>
           <Eyebrow>PDFyi · PDF toolkit for students</Eyebrow>
-          <h1 className="mt-4 text-balance font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 text-balance font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[3.4rem] xl:text-[3.75rem]">
             Everything you need <br className="hidden sm:block" />to <span className="text-primary">work with PDFs.</span>
           </h1>
           <p className="mt-5 max-w-[48ch] text-lg text-muted-foreground">

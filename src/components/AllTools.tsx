@@ -20,7 +20,7 @@ export function AllTools() {
   return (
     <div className="space-y-10">
       {GROUPS.map((g) => (
-        <section key={g.title} id={g.title.split(" ")[0].toLowerCase()} className="scroll-mt-24">
+        <section key={g.title} id={g.title.split(" ")[0]!.toLowerCase()} className="scroll-mt-24">
           <h3 className="mb-4 font-display text-lg font-bold">{g.title}</h3>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {(g.ids ?? []).map((id) => {
