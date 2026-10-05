@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import logoAsset from "@/assets/pdfyi-logo.png.asset.json";
 
 const NAV = [
-  { label: "Tools", to: "/tools" as const },
+  { label: "Tools", to: "/tools" as const, hash: "" },
   { label: "Features", to: "/" as const, hash: "features" },
   { label: "About", to: "/" as const, hash: "about" },
 ];
